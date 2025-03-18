@@ -1,0 +1,227 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('login.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: slideDown 2s ease-in-out;
+}
+
+
+/* Keyframes for Slide Down Effect */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Form Section */
+.section {
+    width: 90%;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-box {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(240, 229, 229);
+    border-radius: 20px;
+}
+
+/* Button Toggle */
+.button_box {
+    display: flex;
+    justify-content: space-around;
+    background: #ddd;
+    padding: 3px; /* Reduced padding */
+    border-radius: 20px; /* Adjusted for a thinner look */
+    width: 100%;
+    max-width: 250px; /* Slightly reduced width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.toggle-btn {
+    padding: 12px 15px; /* Increased padding for better visibility */
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+    z-index: 1;
+    flex: 1; /* Makes both buttons take equal space */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Sliding Button Animation */
+#btn {
+    position: absolute;
+    width: 50%;
+    height: 80%; /* Reduced height to make it thinner */
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 20px; /* Reduced radius for a thinner look */
+    transition: transform 0.5s ease-in-out;
+    top: 10%; /* Centers it vertically */
+    left: 0; /* Start position */
+}
+
+/* Form Fields */
+.input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Input Field Animation */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #999;
+    outline: none;
+    background: transparent;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Glow Effect on Focus */
+.input-field:focus {
+    border-bottom: 2px solid #ff105f;
+    box-shadow: 0 2px 5px rgba(255, 16, 95, 0.4);
+}
+
+/* Shake Animation for Empty Field */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Checkbox and Span */
+.check_box {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+span {
+    color: #777;
+    font-size: 12px;
+    margin-left: 5px;
+}
+/* Modal Styles */
+#optionsModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 30px;
+    animation: fadeInModal 0.5s ease-in-out;
+}
+
+.modal-button {
+    margin: 10px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 20px;
+}
+
+.modal-button:hover {
+    transform: scale(1.1);
+}
+
+.close-button {
+    margin-top: 10px;
+    background: red;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .section {
+        width: 95%;
+        padding: 15px;
+    }
+    .button_box {
+        max-width: 200px;
+    }
+    .toggle-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    .submit-btn {
+        font-size: 14px;
+    }
+}

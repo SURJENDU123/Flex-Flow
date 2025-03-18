@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.container {
+    width: 90%;
+    max-width: 1160px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: slideUp 0.8s ease-in-out;
+}
+
+.left {
+    width: 50%;
+    float: left;
+    padding: 10px 30px;
+}
+
+.right {
+    width: 40%;
+    float: right;
+    padding: 50px 70px;
+    text-align: center;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    padding: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+h2:hover {
+    transform: scale(1.1);
+}
+
+form {
+    padding: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form select:focus {
+    border-color: #34495e;
+    box-shadow: 0 0 5px rgba(52, 73, 94, 0.5);
+    transform: scale(1.05);
+}
+
+#zip {
+    display: flex;
+    gap: 10px;
+}
+
+#zip select,
+#zip input[type="number"] {
+    width: calc(50% - 5px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    transform: scale(1);
+}
+
+form input[type="submit"]:hover {
+    background: linear-gradient(135deg, #2c3e50, #1a252f);
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        float: none;
+        padding: 20px;
+    }
+
+    #zip {
+        flex-direction: column;
+    }
+
+    #zip select,
+    #zip input[type="number"] {
+        width: 100%;
+    }
+}

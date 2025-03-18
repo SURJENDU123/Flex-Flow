@@ -1,0 +1,445 @@
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    scroll-behavior: smooth;
+    background-image: url(yogacenterback.jpg);  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(10px);
+    animation: fadeInPage 1s ease-in;
+  }
+  
+  /* Keyframes for Fade-in Effect */
+  @keyframes fadeInPage {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Sticky Navigation Bar */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent black */
+    backdrop-filter: blur(30px);
+    position: sticky;
+    /* Makes it sticky */
+    top: 0;
+    /* Sticks to the top */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Ensures it stays above other elements */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    /* Subtle shadow effect */
+  }
+  
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #f39c12;
+  }
+  
+  /* Login Button */
+  .btn a {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #f39c12;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .btn a:hover {
+    background: #d9820e;
+  }
+  
+  /* Search bar Animation */
+  .search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input-search {
+    height: 40px;
+    width: 0;
+    border: none;
+    padding: 0 10px;
+    font-size: 16px;
+    outline: none;
+    transition: width 0.4s ease-in-out;
+    color: white;
+    background: transparent;
+    border-bottom: 2px solid white;
+    opacity: 0;
+  }
+  
+  .input-search:focus,
+  .btn-search:focus~.input-search {
+    width: 250px;
+    opacity: 1;
+  }
+  
+  .btn-search {
+    width: 40px;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #22a6b3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+  }
+  
+  .btn-search:hover {
+    background-color: #1f8a92;
+  }
+  
+  .btn-search:focus~.input-search {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  
+  .input-search:focus {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    z-index: 3;
+    position: relative;
+    background-color: black;
+  }
+  
+  header h1 {
+    color: white;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-right: 20px;
+  }
+  
+  /* General Icon Effects */
+  .social-icons a {
+    font-size: 20px;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-decoration: none;
+  }
+  
+  /* Hover and Focus Effects */
+  .social-icons a:hover,
+  .social-icons a:focus {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    color: white !important;
+    outline: none;
+  }
+  
+  /* Facebook */
+  .social-icons a[href*="facebook"] {
+    color: #1877F2;
+  }
+  
+  .social-icons a[href*="facebook"]:hover,
+  .social-icons a[href*="facebook"]:focus {
+    background: #1877F2;
+  }
+  
+  /* YouTube */
+  .social-icons a[href*="youtube"] {
+    color: #FF0000;
+  }
+  
+  .social-icons a[href*="youtube"]:hover,
+  .social-icons a[href*="youtube"]:focus {
+    background: #FF0000;
+  }
+  
+  /* Instagram */
+  .social-icons a[href*="instagram"] {
+    color: #E4405F;
+  }
+  
+  .social-icons a[href*="instagram"]:hover,
+  .social-icons a[href*="instagram"]:focus {
+    background: #E4405F;
+  }
+  
+  
+  /* Hero Section */
+  .hero {
+    padding: 100px 20px;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  /* About Us */
+  .about {
+    padding: 50px 20px;
+  }
+  
+  /* Services */
+  .services {
+    padding: 50px 20px;
+  }
+  
+  .services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .service {
+    background: #444;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .service:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Flip Card Section */
+  .pricing {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 130px;
+    padding: 60px 20px;
+  }
+  
+  .flip-card1,
+  .flip-card2,
+  .flip-card3 {
+    background-color: transparent;
+    width: 260px;
+    height: 350px;
+    perspective: 1000px;
+    border-radius: 30px;
+  }
+  
+  .flip-card-inner1,
+  .flip-card-inner2,
+  .flip-card-inner3 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+  }
+  
+  .flip-card1:hover .flip-card-inner1,
+  .flip-card2:hover .flip-card-inner2,
+  .flip-card3:hover .flip-card-inner3 {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front1,
+  .flip-card-front2,
+  .flip-card-front3,
+  .flip-card-back1,
+  .flip-card-back2,
+  .flip-card-back3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 30px;
+  }
+  
+  /* Front Side (Image) */
+  .flip-card-front1,
+  .flip-card-front2,
+  .flip-card-front3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+  }
+  
+  /* Back Side (Text) */
+  .flip-card-back1,
+  .flip-card-back2,
+  .flip-card-back3 {
+    background: #9dcce0;
+    color: black;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    border-radius: 30px;
+  }
+  
+  .flip-card-back1 h3,
+  .flip-card-back2 h3,
+  .flip-card-back3 h3 {
+    margin-bottom: 10px;
+  }
+  
+  /* Button Styling */
+  #button1 {
+    background: black;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 30px;
+  }
+  
+  #button1 a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  #button1:hover {
+    background: #444;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 25px;
+    background: #222;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .pricing {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .flip-card1,
+    .flip-card2,
+    .flip-card3 {
+      width: 220px;
+      height: 320px;
+    }
+  
+    .input-search:focus,
+    .btn-search:focus~.input-search {
+      width: 180px;
+    }
+  
+    .nav-links a {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .search-box {
+      width: 90%;
+      margin-top: 10px;
+    }
+  
+    .input-search:focus,
+    .btn-search:focus~.input-search {
+      width: 150px;
+    }
+  
+    .hero {
+      font-size: 20px;
+    }
+  
+    .service {
+      width: 100%;
+    }
+  
+    .flip-card1,
+    .flip-card2,
+    .flip-card3 {
+      width: 180px;
+      height: 280px;
+    }
+  
+    .flip-card-back1 h3,
+    .flip-card-back2 h3,
+    .flip-card-back3 h3 {
+      font-size: 14px;
+    }
+  
+    .nav-links a {
+      font-size: 14px;
+    }
+  }
